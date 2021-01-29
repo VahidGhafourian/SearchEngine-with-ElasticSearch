@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+    html, body {
+        position: relative;
+        font-family: 'Montserrat Alternates', sans-serif;
+        color: #FFFFFF;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    main {
+        font-size: 20px;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 0 auto;
+        padding: 0 26px;
+        width: 100%;
+        height: 100%;
+        overflow-x: auto;
+        background: #f5f5f5;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: linear-gradient(to right bottom, #0f3671, #0064a4, #0094bd, #00c1b6, #12eb96);
+        background: -webkit- linear-gradient(to right bottom, #0f3671, #0064a4, #0094bd, #00c1b6, #12eb96);
+        background: -moz- linear-gradient(to right bottom, #0f3671, #0064a4, #0094bd, #00c1b6, #12eb96);
+        background: -ms- linear-gradient(to right bottom, #0f3671, #0064a4, #0094bd, #00c1b6, #12eb96);
+        background: -o- linear-gradient(to right bottom, #0f3671, #0064a4, #0094bd, #00c1b6, #12eb96);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9a39a3', endColorstr='#4167a8', GradientType=1);
+    }
+</style>
+<body>
+<main>
+    <br>
+    Author name : {{author_name}}
+    <br>
+    Document id : {{docid}}
+    <br>
+    Document topic : {{doctopic}}
+    <br>
+    Document title : {{doctitle}}
+    <br>
+    Likes : {{doclikes}}
+    <br>
+    Tags : {{doctags}}
+    <br>
+    <br>
+    {{docbody}}
+    <br>
+</main>
+</body>
+</html>

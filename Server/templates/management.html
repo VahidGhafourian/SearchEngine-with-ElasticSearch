@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+
+    form {
+        overflow: hidden;
+        float: left;
+        width: 25%;
+        height: 100%;
+        position: static;
+        background: #ffffff;
+        max-width: 50%;
+        margin: 2%;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 14px 28px rgb(0, 0, 0, 0.30), 0 10px 10px rgb(0, 0, 0, 0.22);
+        border-radius: 10px;
+
+    }
+
+    p {
+        overflow: hidden;
+        float: left;
+        width: 25%;
+        height: 100%;
+        position: center;
+        background: #ffffff;
+        max-width: 100%;
+        margin: 2%;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 14px 28px rgb(0, 0, 0, 0.30), 0 10px 10px rgb(0, 0, 0, 0.22);
+        border-radius: 10px;
+
+    }
+
+    pp {
+        overflow: auto;
+        float: left;
+        width: 100%;
+        height: 100%;
+        position: center;
+        background: #ffffff;
+        max-width: 89%;
+        margin: 2%;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 14px 28px rgb(0, 0, 0, 0.30), 0 10px 10px rgb(0, 0, 0, 0.22);
+        border-radius: 10px;
+
+    }
+
+    input {
+        font-family: sans-serif;
+        outline: 0;
+        background: #c9c7c7;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        border-radius: 10px;
+
+    }
+
+    button {
+        font-family: sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: .1em;
+        outline: 0;
+        background: #333;
+        width: 100%;
+        border: 0;
+        margin: 0px 0px 8px;
+        padding: 15px;
+        color: #FFFFFF;
+        border-radius: 20px;
+    }
+
+    body {
+        background: #f5f5f5;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: linear-gradient(to right bottom, #0f3671, #0064a4, #0094bd, #00c1b6, #12eb96);
+        background: -webkit- linear-gradient(to right bottom, #0f3671, #0064a4, #0094bd, #00c1b6, #12eb96);
+        background: -moz- linear-gradient(to right bottom, #0f3671, #0064a4, #0094bd, #00c1b6, #12eb96);
+        background: -ms- linear-gradient(to right bottom, #0f3671, #0064a4, #0094bd, #00c1b6, #12eb96);
+        background: -o- linear-gradient(to right bottom, #0f3671, #0064a4, #0094bd, #00c1b6, #12eb96);
+    }
+
+</style>
+<body>
+<div class="child1" aria-orientation="horizontal">
+
+    <form action="/admin/documents" method="get">
+        read from DB with ID
+        <input type="number" placeholder="id" required="required" name="id">
+        <button>Read</button>
+    </form>
+
+    <form action="/admin/documents" method="get">
+        read from DB with title
+        <input type="text" placeholder="title" required="required" name="title">
+        <button>Read</button>
+    </form>
+
+
+    <form action="/admin/documents" method="post">
+        delete document with given ID
+        <input type="number" placeholder="id" required="required" name="id">
+        <input type="hidden" required="required" name="_DELETE" value="DELETE">
+        <button>Delete</button>
+    </form>
+
+</div>
+
+<div class="child2" aria-orientation="horizontal">
+
+    <form action="/admin/documents" method="post">
+        add document to Database
+        <input type="number" placeholder="id" required="required" name="id">
+        <input type="text" placeholder="author name" required="required" name="author_name">
+        <input type="text" placeholder="topic" required="required" name="topic">
+        <input type="text" placeholder="title" required="required" name="title">
+        <input type="text" placeholder="tags" required="required" name="tags">
+        <input type="number" placeholder="likes" required="required" name="likes">
+        <input type="text" placeholder="body" required="required" name="body">
+
+        <button>Submit</button>
+    </form>
+
+    <form action="/admin/documents" method="post">
+        update document with given ID
+        <input type="number" placeholder="id" required="required" name="id">
+        <input type="text" placeholder="author name" required="required" name="author_name">
+        <input type="text" placeholder="topic" required="required" name="topic">
+        <input type="text" placeholder="title" required="required" name="title">
+        <input type="text" placeholder="tags" required="required" name="tags">
+        <input type="number" placeholder="likes" required="required" name="likes">
+        <input type="text" placeholder="body" required="required" name="body">
+        <input type="hidden" required="required" name="_PUT" value="PUT">
+        <button>Update</button>
+    </form>
+
+    <p>{{result}}</p>
+
+</div>
+<br>
+<br>
+<pp>
+    Author name : {{author_name}}
+    <br>
+    Document id : {{docid}}
+    <br>
+    Document topic : {{doctopic}}
+    <br>
+    Document title : {{doctitle}}
+    <br>
+    Likes : {{doclikes}}
+    <br>
+    Tags : {{doctags}}
+    <br>
+    <br>
+    {{docbody}}
+    <br>
+</pp>
+
+</body>
+</html>
