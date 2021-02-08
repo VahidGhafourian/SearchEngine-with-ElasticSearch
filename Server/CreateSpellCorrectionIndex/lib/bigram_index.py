@@ -17,7 +17,7 @@ def token_set(words):
 # creates index of bigrams in the index directory, wont do anything if its created already
 def subfolder_creation():
     for i in __alpha__:
-        cp = '../index/' + i
+        cp = './CreateSpellCorrectionIndex/index/' + i
         if not os.path.exists(path=cp):
             os.mkdir(path=cp)
             for j in __alpha__:
@@ -26,6 +26,7 @@ def subfolder_creation():
 
 # gets a word and return its bigrams
 def bigram_separation(token):
+    token = str(token)
     bigrams = list()
     for i in range(len(token)):
         bi = token[i:i + 2]
@@ -35,7 +36,7 @@ def bigram_separation(token):
 
 
 def bigram_add(bigram, word):
-    path = '../index/' + bigram[0] + '/' + bigram[1] + '.txt'
-    f = open(path, 'a', encoding='utf-8')
-    f.write(word)
-    f.close()
+        path = './CreateSpellCorrectionIndex/index/' + bigram[0] + '/' + bigram[1] + '.txt'
+        f = open(path, 'a', encoding='utf-8')
+        f.write(word)
+        f.close()
